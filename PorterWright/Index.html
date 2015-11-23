@@ -20,7 +20,7 @@
                         <tr>
                             <td style="width:24px;">&nbsp;</td>
                             <td>
-                                <a href="About.aspx"><img src="Images/Logo.png" alt="" /></a>
+                                <a href="" ng-click="menuClick()"><img src="Images/Logo.png" alt="" /></a>
                             </td>
                         </tr>
                     </table>
@@ -41,10 +41,10 @@
                 <td align="left" valign="top" style="width:176px; padding-left: 20px;">
                     <ul>
                         <li ng-repeat="menuItem in ui.menuItems">
-                            <a href="" data-toggle="offcanvas" ng-class="{link: selectedMenuItem != menuItem, linkSelected : selectedMenuItem == menuItem}" ng-click="menuClick(menuItem)">{{menuItem.text}}</a>
+                            <a href="" ng-class="{link: selectedMenuItem != menuItem, linkSelected : selectedMenuItem == menuItem}" ng-click="menuClick(menuItem)">{{menuItem.text}}</a>
                             <ul ng-show="showChildren(menuItem)">
                                 <li ng-repeat="menuItem2 in menuItem.menuItems">
-                                    <a href="" data-toggle="offcanvas" ng-class="{linkSmall: selectedMenuItem != menuItem2, linkSmallSelected : selectedMenuItem == menuItem2}" ng-click="menuClick(menuItem2)">{{menuItem2.text}}</a>
+                                    <a href="" ng-class="{linkSmall: selectedMenuItem != menuItem2, linkSmallSelected : selectedMenuItem == menuItem2}" ng-click="menuClick(menuItem2)">{{menuItem2.text}}</a>
                                 </li>
                             </ul>
                         </li>

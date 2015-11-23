@@ -33,6 +33,11 @@
         };
 
         $scope.menuClick = function (menuItem) {
+
+            if (!menuItem) {
+                menuItem = $scope.ui.menuItems[0];
+            }
+
             if (menuItem.selectChild) {
                 menuItem = menuItem.menuItems[0];
             }
