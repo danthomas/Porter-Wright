@@ -1,0 +1,8 @@
+﻿<div ng-repeat="testimonial in testimonials">
+    <span class="quote">"{{testimonial.text}}"</span><br />
+    <span class="standard">{{testimonial.source}}</span>
+    <span ng-if="testimonial.url" class="url"><a href="{{testimonial.url}}" target="_blank">{{testimonial.site}}</a></span>
+    <span ng-if="testimonial.alt" class="url">{{testimonial.alt}}</span>
+    <br />
+    <br />    
+</div>

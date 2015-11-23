@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Porter-Wright</title>
+    <base target="_self">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Styles/bootstrap.min.css" />
+
+    <link href="Styles/app.css" rel="stylesheet" />
+</head>
+<body ng-app="app" ng-controller="appController" onload="Start();">
+
+
+    <div align="center">
+        <table id="Table1" cellspacing="0" cellpadding="0" style="border-width:0px;width:800px;border-collapse:collapse;">
+            <tr style="height:108px;">
+                <td class="panel1" style="width:58px;">&nbsp;</td>
+                <td align="left" colspan="5" style="width:684px;">
+                    <table cellspacing="0" cellpadding="0" style="border-width:0px;width:684px;border-collapse:collapse;">
+                        <tr>
+                            <td style="width:24px;">&nbsp;</td>
+                            <td>
+                                <a href="About.aspx"><img src="Images/Logo.png" alt="" /></a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="panel1" style="width:58px;">&nbsp;</td>
+            </tr>
+            <tr style="height:9px;">
+                <td class="panel2" style="width:58px;"></td>
+                <td class="middle" colspan="5" style="width:684px;"></td>
+                <td class="panel2" style="width:58px;"></td>
+            </tr>
+            <tr style="height:16px;">
+                <td class="panel1" rowspan="2" style="width:58px;"></td>
+                <td colspan="5" style="width:684px;"></td>
+                <td class="panel1" rowspan="2" style="width:58px;"></td>
+            </tr>
+            <tr style="height:400px;">
+                <td align="left" valign="top" style="width:176px; padding-left: 20px;">
+                    <ul>
+                        <li ng-repeat="menuItem in ui.menuItems">
+                            <a href="" data-toggle="offcanvas" ng-class="{link: selectedMenuItem != menuItem, linkSelected : selectedMenuItem == menuItem}" ng-click="menuClick(menuItem)">{{menuItem.text}}</a>
+                            <ul ng-show="showChildren(menuItem)">
+                                <li ng-repeat="menuItem2 in menuItem.menuItems">
+                                    <a href="" data-toggle="offcanvas" ng-class="{linkSmall: selectedMenuItem != menuItem2, linkSmallSelected : selectedMenuItem == menuItem2}" ng-click="menuClick(menuItem2)">{{menuItem2.text}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td class="panel3" style="width:16px;"></td>
+                <td align="left" valign="top" style="width:340px;">
+                    <div class="standard" ui-view>
+                    </div>
+                </td>
+                <td class="panel3" style="width:16px;"></td>
+                <td align="center" valign="top" style="width:136px;">
+                    <table>
+                        <tr valign="top">
+                            <td class="cell">
+                                <table cellspacing="20,0,0,0" cellpadding="0">
+                                    <tr>
+                                        <td class="logoCell">
+                                            <div id="div0">
+                                                <a id='a0' href='' target="_blank">
+                                                    <img id="img0" height="87" width="87" src="Images/BlankLogo.png" />
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="logoCell">
+                                            <div id="div1">
+                                                <a id='a1' href='' target="_blank">
+                                                    <img id="img1" height="87" width="87" src="Images/BlankLogo.png" />
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="logoCell">
+                                            <div id="div2">
+                                                <a id='a2' href='' target="_blank">
+                                                    <img id="img2" height="87" width="87" src="Images/BlankLogo.png" />
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="logoCell">
+                                            <div id="div3">
+                                                <a id='a3' href='' target="_blank">
+                                                    <img id="img3" height="87" width="87" src="Images/BlankLogo.png" />
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-animate.min.js"></script>
+    <script src="Scripts/angular-aria.min.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/App.js"></script>
+</body>
+</html>
