@@ -7,6 +7,10 @@
     padding-top: 10px;
 }
 
+.responsive_menu{
+    display: none;
+}
+
 a, a:hover, a:active, a:focus {
     text-decoration: none;
     color: #6D6572;
@@ -210,4 +214,32 @@ span {
     #sidebar {
         padding-top: 0;
     }
+}
+
+
+
+@media screen and (max-width: 840px) {
+    
+    .responsive_menu{
+    display: block;
+}
+table { 
+  width: 100% !important; 
+  border-collapse: collapse !important; 
+}
+#menu,.menu_column{
+   display: none;
+}
+}
+
+@media screen and (max-width: 768px) {
+table tr,table td{
+    /*display: block;*/
+   /* width: 100%;*/
+
+}
+.logos_column{
+    display: none;
+}
+
 }

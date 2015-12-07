@@ -5,12 +5,61 @@
     <title>Porter-Wright</title>
     <base target="_self">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link href="Styles/app.css" rel="stylesheet" />
+
+    <link href="Styles/slimmenu.min.css" rel="stylesheet" />
+
+
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-animate.min.js"></script>
+    <script src="Scripts/angular-aria.min.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/App.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="Scripts/jquery.slimmenu.min.js"></script>
+
+    <script>
+
+        $("document").ready(function () {
+            $('#navigation').slimmenu(
+    {
+        resizeWidth: '840',
+        collapserTitle: '',
+        animSpeed: 'medium',
+        easingEffect: null,
+        indentChildren: false,
+        childrenIndenter: '&nbsp;'
+    });
+        });
+
+    </script>
+
 </head>
 <body ng-app="app" ng-controller="appController" onload="Start();">
-
-
+    <div class="responsive_menu">
+        <!-- Responsive Menu Code  -->
+        <ul id="navigation" class="slimmenu">
+            <li> <a href="/#/about">ABOUT</a></li>
+            <li><a href="/#/services">SERVICES</a></li>
+            <li class="has-submenu">
+                <a href="/#/portfolio?id=1">PORTFOLIO</a>
+                <ul style="display: none; height: 90px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+                    <li><a href="/#/portfolio?id=1">Penelope Chilvers</a></li>
+                    <li><a href="/#/portfolio?id=2">Shrimps</a></li>
+                    <li><a href="/#/portfolio?id=3">ERDEM</a></li>
+                    <li><a href="/#/portfolio?id=4">ilovegorgeous</a></li>
+                    <li><a href="/#/portfolio?id=5">Anya Hindmarch</a></li>
+                    <li><a href="/#/portfolio?id=6">Links of London</a></li>
+                    <li><a href="/#/portfolio?id=7">Moet & Chandon</a></li>
+                    <li><a href="/#/portfolio?id=8">Dom Perignon</a></li>
+                </ul>
+                <span class="sub-toggle"><i>▼</i></span>
+            </li>
+            <li><a href="/#/testimonials">TESTIMONIALS</a></li>
+            <li><a href="/#/contact">CONTACT</a></li>
+        </ul>
+    </div>
     <div align="center">
         <table id="Table1" cellspacing="0" cellpadding="0" style="border-width:0px;width:800px;border-collapse:collapse;">
             <tr style="height:108px;">
@@ -20,7 +69,7 @@
                         <tr>
                             <td style="width:24px;">&nbsp;</td>
                             <td>
-                                <a href="" ng-click="menuClick()"><img src="Images/Logo.png" alt="" /></a>
+                                <a href="" ng-click="menuClick()"><img class="logo_image" src="Images/Logo.png" alt="" /></a>
                             </td>
                         </tr>
                     </table>
@@ -38,8 +87,8 @@
                 <td class="panel1" rowspan="2" style="width:58px;"></td>
             </tr>
             <tr style="height:400px;">
-                <td align="left" valign="top" style="width:176px; padding-left: 20px;">
-                    <ul>
+                <td align="left" valign="top" style="width:176px; padding-left: 20px;" class="menu_column">
+                    <ul id="menu">
                         <li ng-repeat="menuItem in ui.menuItems">
                             <a href="" ng-class="{link: selectedMenuItem != menuItem, linkSelected : selectedMenuItem == menuItem}" ng-click="menuClick(menuItem)">{{menuItem.text}}</a>
                             <ul ng-show="showChildren(menuItem)">
@@ -56,7 +105,7 @@
                     </div>
                 </td>
                 <td class="panel3" style="width:16px;"></td>
-                <td align="center" valign="top" style="width:136px;">
+                <td align="center" valign="top" style="width:136px;" class="logos_column">
                     <table>
                         <tr valign="top">
                             <td class="cell">
@@ -107,12 +156,5 @@
     </div>
 
 
-
-    <script src="Scripts/jquery.min.js"></script>
-    <script src="Scripts/angular.min.js"></script>
-    <script src="Scripts/angular-animate.min.js"></script>
-    <script src="Scripts/angular-aria.min.js"></script>
-    <script src="Scripts/angular-ui-router.min.js"></script>
-    <script src="Scripts/App.js"></script>
 </body>
 </html>

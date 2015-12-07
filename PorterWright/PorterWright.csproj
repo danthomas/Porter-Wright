@@ -103,7 +103,9 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.slimmenu.min.js" />
     <Content Include="Styles\app.css" />
+    <Content Include="Styles\slimmenu.min.css" />
     <Content Include="Templates\About.html" />
     <Content Include="Templates\Contact.html" />
     <Content Include="Templates\Portfolio.html" />
@@ -112,6 +114,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
